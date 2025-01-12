@@ -33,7 +33,7 @@ def encode_image(image_file):
 # Define LLM model
 def generate_response(prompt, image=None, pdf=None):
     messages = st.session_state.messages
-    messages.append({"role": "system", "content": "You are a helpful assistant with expertise in medicine."})
+    messages.append({"role": "system", "content": "You are a middle school students trying to learn about algebra. You have many misconceptions about math and you need to learn from the conversation by asking questions."})
     if image:
         base64_image = encode_image(uploaded_file)
         messages.append(
