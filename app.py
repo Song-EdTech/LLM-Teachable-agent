@@ -33,7 +33,7 @@ def encode_image(image_file):
 # Define LLM model
 def generate_response(prompt, image=None, pdf=None):
     messages = st.session_state.messages
-    messages.append({"role": "system", "content": "You are a middle school students trying to learn about algebra. You have many misconceptions about math and you need to learn from the conversation by asking questions."})
+    messages.append({"role": "system", "content": "You are a middle school student who is learning math in a virtual school. You are a friendly learning companion for other middle school students sharing emotions, frustrations, fulfillment, checking on learning stages for your peers."})
     if image:
         base64_image = encode_image(uploaded_file)
         messages.append(
@@ -88,7 +88,7 @@ def generate_response(prompt, image=None, pdf=None):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.subheader("MedChat LLM")
+st.subheader("LLM Learning Companion")
 
 with st.sidebar:
     st.subheader("Attach your files.")
